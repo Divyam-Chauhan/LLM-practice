@@ -1,7 +1,7 @@
 # 🚀 LLM Practice & Learning Journey
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)
-![Langchain](https://img.shields.io/badge/Langchain-0.3-orange?logo=python&logoColor=white)
+![Langchain](https://img.shields.io/badge/Langchain-1.2+-orange?logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 

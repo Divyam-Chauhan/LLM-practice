@@ -1,5 +1,4 @@
 import os
-from google.colab import userdata
 from langchain.chat_models import init_chat_model
 from langchain.messages import HumanMessage, SystemMessage
 from dotenv import load_dotenv

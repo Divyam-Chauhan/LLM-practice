@@ -6,7 +6,7 @@
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 
-Welcome to my repository! 👋 
+Welcome to my repository!
 
 This is a clean, organized collection of my learnings as I dive into the world of Large Language Models (LLMs). I believe the best way to understand complex AI concepts is to break them down into simple, working examples—no BS, no unnecessary jargon, just the essentials.
 

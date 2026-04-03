@@ -40,7 +40,12 @@ Every folder in this repository is a standalone mini-project tailored to teach a
 * **What it does**: You provide it a paragraph of text, and it automatically generates test questions based on that text.
 * **What you learn**: How to use the official, native `google-genai` SDK directly. This project doesn't use the Langchain wrapper; it's just you and the raw Google API talking to each other.
 
-### 3. `Langchain Travel Guide`
+### 3. `Study helper 2`
+* **Format**: Pure Python Script
+* **What it does**: An enhanced version of the Study Assistant that introduces **System Instructions** and **Generation Tuning**.
+* **What you learn**: How to assign a specific personality to the AI (Friendly vs. Academic) and how to control its output behavior using Technical parameters like **Temperature** and **Max Tokens**.
+
+### 4. `Langchain Travel Guide`
 * **Format**: Python Script
 * **What it does**: A simple local application where the AI is instructed to act as a focused travel assistant.
 * **What you learn**: How to set up Langchain *locally* on your machine and how to safely store your secret API keys in a `.env` file instead of hardcoding them into your scripts.

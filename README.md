@@ -32,28 +32,28 @@ Every folder in this repository is a standalone mini-project tailored to teach a
 
 ### 1. `Langchain 1`
 * **Format**: Google Colab Notebook
-* **What it does**: A very basic introduction to setting up a chat model and giving the AI a custom "persona" (we make it act like an ignorant maniac!).
-* **What you learn**: How to use Langchain to structure an AI's behavior using `SystemMessage` (the instructions you secretly give the AI) and `HumanMessage` (what the user types). It runs perfectly in the cloud on Google Colab, so there's no complex local setup needed.
+* **What it does**: A quick introduction to setting up a chat model and giving the AI a custom persona using LangChain directly in the browser.
+* **What you learn**: First exposure to `SystemMessage` and `HumanMessage` — the two fundamental message types used to structure AI conversations in LangChain.
 
 ### 2. `Study helper`
 * **Format**: Pure Python Script
-* **What it does**: You provide it a paragraph of text, and it automatically generates test questions based on that text.
-* **What you learn**: How to use the official, native `google-genai` SDK directly. This project doesn't use the Langchain wrapper; it's just you and the raw Google API talking to each other.
+* **What it does**: Takes a paragraph of text and automatically generates study questions from it.
+* **What you learn**: How to use the **native `google-genai` SDK** directly (no LangChain). Covers SDK initialization, the `generate_content` method, and response object handling. The README contains a full line-by-line code breakdown.
 
 ### 3. `Study helper 2`
 * **Format**: Pure Python Script
-* **What it does**: An enhanced version of the Study Assistant that introduces **System Instructions** and **Generation Tuning**.
-* **What you learn**: How to assign a specific personality to the AI (Friendly vs. Academic) and how to control its output behavior using Technical parameters like **Temperature** and **Max Tokens**.
+* **What it does**: An enhanced version of the Study Assistant with switchable AI personalities (Friendly vs. Academic) and output tuning.
+* **What you learn**: How **System Instructions** work via `GenerateContentConfig`, and how to control output using **Temperature** (randomness) and **Max Output Tokens** (length). The README explains Chat Model Roles (System, User, Assistant) in detail.
 
 ### 4. `Langchain Travel Guide`
 * **Format**: Python Script
-* **What it does**: A simple local application where the AI is instructed to act as a focused travel assistant.
-* **What you learn**: How to set up Langchain *locally* on your machine and how to safely store your secret API keys in a `.env` file instead of hardcoding them into your scripts.
+* **What it does**: A local application where the AI acts as a focused travel recommendation assistant using LangChain and Google Gemini.
+* **What you learn**: How to set up LangChain locally on your machine using `init_chat_model`, and how to safely manage API keys using `.env` files.
 
-### 4. `Langchain Tutor Assistant`
+### 5. `Langchain Tutor Assistant`
 * **Format**: Python Script
-* **What it does**: An AI tutor that explains Python programming concepts (like dictionaries) with code examples.
-* **What you learn**: You will learn how easy it is to **swap brains**! Instead of Google's Gemini, this project uses Langchain to connect to a massive open-source model (`Llama-3.3-70b-versatile`) hosted on Groq, demonstrating how flexible standard frameworks can be.
+* **What it does**: An AI tutor that explains Python programming concepts with code examples, powered by Meta's open-source Llama 3.3 model hosted on Groq.
+* **What you learn**: This is where **LangChain is fully explained** — the Provider Problem (why switching between AI providers is painful without a framework), how `init_chat_model` standardizes provider access, how Messages work as structured objects, and how switching from Gemini to Groq is a one-line change. The README contains a comprehensive line-by-line code breakdown.
 
 ---
 

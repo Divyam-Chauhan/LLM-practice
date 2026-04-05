@@ -30,10 +30,10 @@ Before you dive into any of the folders, make sure you have the following ready 
 
 Every folder in this repository is a standalone mini-project tailored to teach a specific concept. 
 
-### 1. `Langchain 1`
+### 1. `Intro to Langchain`
 * **Format**: Google Colab Notebook
-* **What it does**: A quick introduction to setting up a chat model and giving the AI a custom persona using LangChain directly in the browser.
-* **What you learn**: First exposure to `SystemMessage` and `HumanMessage` — the two fundamental message types used to structure AI conversations in LangChain.
+* **What it does**: Sets up a chat model and gives the AI a custom persona using LangChain directly in the browser.
+* **What you learn**: This is where **LangChain is fully introduced** — the Provider Problem (why switching between AI providers is painful without a framework), what LangChain solves, its core components (Models, Messages), and a detailed line-by-line breakdown of the notebook code. The README ends with an overview of LangChain's broader capabilities (Memory, Tools, Agents, RAG).
 
 ### 2. `Study helper`
 * **Format**: Pure Python Script
@@ -53,7 +53,7 @@ Every folder in this repository is a standalone mini-project tailored to teach a
 ### 5. `Langchain Tutor Assistant`
 * **Format**: Python Script
 * **What it does**: An AI tutor that explains Python programming concepts with code examples, powered by Meta's open-source Llama 3.3 model hosted on Groq.
-* **What you learn**: This is where **LangChain is fully explained** — the Provider Problem (why switching between AI providers is painful without a framework), how `init_chat_model` standardizes provider access, how Messages work as structured objects, and how switching from Gemini to Groq is a one-line change. The README contains a comprehensive line-by-line code breakdown.
+* **What you learn**: How to **swap providers** in LangChain — switching from Google Gemini to Groq (Llama 3.3) with a single line change. Demonstrates that `SystemMessage`, `HumanMessage`, `invoke()`, and `.content` work identically across any supported backend.
 
 ---
 

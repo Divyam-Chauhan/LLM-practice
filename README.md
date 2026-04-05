@@ -30,20 +30,20 @@ Before you dive into any of the folders, make sure you have the following ready 
 
 Every folder in this repository is a standalone mini-project tailored to teach a specific concept. 
 
-### 1. `Intro to Langchain`
-* **Format**: Google Colab Notebook
-* **What it does**: Sets up a chat model and gives the AI a custom persona using LangChain directly in the browser.
-* **What you learn**: This is where **LangChain is fully introduced** — the Provider Problem (why switching between AI providers is painful without a framework), what LangChain solves, its core components (Models, Messages), and a detailed line-by-line breakdown of the notebook code. The README ends with an overview of LangChain's broader capabilities (Memory, Tools, Agents, RAG).
-
-### 2. `Study helper`
+### 1. `Intro to LLM` ⭐ Start Here
 * **Format**: Pure Python Script
-* **What it does**: Takes a paragraph of text and automatically generates study questions from it.
-* **What you learn**: How to use the **native `google-genai` SDK** directly (no LangChain). Covers SDK initialization, the `generate_content` method, and response object handling. The README contains a full line-by-line code breakdown.
+* **What it does**: Takes a paragraph of text and automatically generates study questions from it using Google Gemini.
+* **What you learn**: **This is your starting point.** It covers what an LLM is, how applications communicate with one, what an SDK is, why we use `google-genai`, how to securely manage API keys with `.env` files, and a complete line-by-line code breakdown of the `generate_content` method.
 
-### 3. `Study helper 2`
+### 2. `Study helper 2`
 * **Format**: Pure Python Script
 * **What it does**: An enhanced version of the Study Assistant with switchable AI personalities (Friendly vs. Academic) and output tuning.
 * **What you learn**: How **System Instructions** work via `GenerateContentConfig`, and how to control output using **Temperature** (randomness) and **Max Output Tokens** (length). The README explains Chat Model Roles (System, User, Assistant) in detail.
+
+### 3. `Intro to Langchain`
+* **Format**: Google Colab Notebook
+* **What it does**: Sets up a chat model and gives the AI a custom persona using LangChain directly in the browser.
+* **What you learn**: This is where **LangChain is fully introduced** — the Provider Problem (why switching between AI providers is painful without a framework), what LangChain solves, its core components (Models, Messages), and a detailed line-by-line breakdown of the notebook code. The README ends with an overview of LangChain's broader capabilities (Memory, Tools, Agents, RAG).
 
 ### 4. `Langchain Travel Guide`
 * **Format**: Python Script

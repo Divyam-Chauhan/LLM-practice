@@ -129,4 +129,4 @@ After working through this project, you now understand:
 
 This foundation is used in every subsequent project in this repository.
 
-**Maintainer**: Divya Prakash Singh Chauhan
+**Maintainer**: Divya Prakash Singh Chauhan 🚀

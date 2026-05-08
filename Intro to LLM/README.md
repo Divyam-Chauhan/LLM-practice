@@ -120,12 +120,40 @@ print(response.text)
 
 ---
 
+### 🔍 Practice: Tone Modifier (`ToneModifier.py`)
+
+This is a second exercise using the same SDK and the same pattern. The goal is to build a **Tone Modifier** — you give it a sentence and ask the model to change its tone (e.g., from casual to formal).
+
+#### **Code Breakdown**
+```python
+def modify_tone(text):
+    response = client.models.generate_content(model = "gemini-2.5-flash", contents = text)
+    return response
+```
+- `modify_tone(text)`: A reusable function that accepts any tone modification prompt.
+- The initialization and authentication (imports, `load_dotenv()`, `genai.Client`) are identical to `app.py`. The same client, the same SDK, the same model.
+- The only difference from `app.py` is the **prompt itself**. Instead of asking the model to generate questions, we ask it to transform the tone of a sentence.
+
+#### **Invocation**
+```python
+response = modify_tone("Translate its tone to formal: 'Knowledge is power.'")
+print(response.text)
+```
+- The prompt embeds both the instruction (`"Translate its tone to formal"`) and the input text (`"Knowledge is power."`) in a single string.
+- `response.text`: Extracts only the tone-modified output from the response object.
+
+#### **Key Observation**
+This exercise reinforces that `generate_content` is a general-purpose method. The model's behavior is entirely driven by the prompt you pass — the same method can generate questions, modify tone, summarize text, or perform any other text transformation. The code structure stays the same; only the prompt changes.
+
+---
+
 ### 📝 What You've Learned
 After working through this project, you now understand:
 1. What an LLM is and how applications communicate with one.
 2. What an SDK is and why we use `google-genai` instead of raw HTTP requests.
 3. How to securely manage API keys using `.env` files.
 4. The `generate_content` method — the fundamental building block for all LLM interactions.
+5. That the same method and code structure can perform completely different tasks based on the prompt alone.
 
 This foundation is used in every subsequent project in this repository.
 

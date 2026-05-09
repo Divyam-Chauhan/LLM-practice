@@ -120,11 +120,16 @@ print(response.text)
 
 ---
 
-### 🔍 Practice: Tone Modifier (`ToneModifier.py`)
+### 🧪 Practice Questions (`Practice Questions/`)
 
-This is a second exercise using the same SDK and the same pattern. The goal is to build a **Tone Modifier** — you give it a sentence and ask the model to change its tone (e.g., from casual to formal).
+All practice exercises live inside the `Practice Questions/` subfolder. Each one uses the same SDK, the same authentication pattern, and the same `generate_content` method — the only thing that changes is the prompt.
 
-#### **Code Breakdown**
+---
+
+#### Practice 1: Tone Modifier (`ToneModifier.py`)
+
+The goal is to build a **Tone Modifier** — you give it a sentence and ask the model to change its tone (e.g., from casual to formal).
+
 ```python
 def modify_tone(text):
     response = client.models.generate_content(model = "gemini-2.5-flash", contents = text)
@@ -134,7 +139,7 @@ def modify_tone(text):
 - The initialization and authentication (imports, `load_dotenv()`, `genai.Client`) are identical to `app.py`. The same client, the same SDK, the same model.
 - The only difference from `app.py` is the **prompt itself**. Instead of asking the model to generate questions, we ask it to transform the tone of a sentence.
 
-#### **Invocation**
+**Invocation:**
 ```python
 response = modify_tone("Translate its tone to formal: 'Knowledge is power.'")
 print(response.text)
@@ -142,8 +147,32 @@ print(response.text)
 - The prompt embeds both the instruction (`"Translate its tone to formal"`) and the input text (`"Knowledge is power."`) in a single string.
 - `response.text`: Extracts only the tone-modified output from the response object.
 
-#### **Key Observation**
-This exercise reinforces that `generate_content` is a general-purpose method. The model's behavior is entirely driven by the prompt you pass — the same method can generate questions, modify tone, summarize text, or perform any other text transformation. The code structure stays the same; only the prompt changes.
+---
+
+#### Practice 2: Language Translator (`LanguageTranslator.py`)
+
+The goal is to build a **Language Translator** — you give it a sentence and a target language, and the model translates it.
+
+```python
+def language_translator(user_prompt):
+    response = client.models.generate_content(model="gemini-2.5-flash", contents=user_prompt)
+    return response
+```
+- `language_translator(user_prompt)`: Identical structure to `modify_tone` and `question_generator`. It accepts a prompt string and passes it directly to the model.
+- The function name and prompt content are the only differences from the previous exercises. The SDK call is exactly the same.
+
+**Invocation:**
+```python
+response = language_translator("Translate this to Hindi:'Welcome to the course Building LLm Applications'")
+print(response.text)
+```
+- The prompt contains both the target language (`"Hindi"`) and the text to translate, embedded in a single string.
+- `response.text`: Extracts the translated output.
+
+---
+
+#### Key Observation
+All three exercises (`app.py`, `ToneModifier.py`, `LanguageTranslator.py`) use the exact same code structure. The `generate_content` method is a general-purpose interface — question generation, tone modification, and language translation are all achieved by changing nothing but the prompt string.
 
 ---
 

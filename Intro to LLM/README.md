@@ -171,6 +171,29 @@ print(response.text)
 
 ---
 
+#### Practice 3: Question Generator Assistant (`Practice Questions/Question Generator Assistant/QuestionGenerator.py`)
+
+The goal is to build a **Question Generator Assistant** — you give it content, and the model creates study questions from that text.
+
+```python
+def question_generator(text):
+    user_prompt = "Generate questions from the following content:\n" + text
+    response = client.models.generate_content(model="gemini-2.5-flash", contents=user_prompt)
+    return response
+```
+- `question_generator(text)`: Builds a prompt from the provided text and sends it to the Gemini model.
+- The SDK call is the same as the other exercises. The only difference is the prompt instruction, which asks the model to generate questions.
+
+**Invocation:**
+```python
+response = question_generator("Large Language Models (LLMs) are AI systems trained on massive text data.")
+print(response.text)
+```
+- The prompt includes the instruction and the source text in a single string.
+- `response.text`: Extracts the generated questions from the model response.
+
+---
+
 #### Key Observation
 All three exercises (`app.py`, `ToneModifier.py`, `LanguageTranslator.py`) use the exact same code structure. The `generate_content` method is a general-purpose interface — question generation, tone modification, and language translation are all achieved by changing nothing but the prompt string.
 

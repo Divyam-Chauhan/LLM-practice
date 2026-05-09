@@ -126,7 +126,7 @@ All practice exercises live inside the `Practice Questions/` subfolder. Each one
 
 ---
 
-#### Practice 1: Tone Modifier (`ToneModifier.py`)
+#### Practice 1: Tone Modifier (`ToneModifier/ToneModifier.py`)
 
 The goal is to build a **Tone Modifier** — you give it a sentence and ask the model to change its tone (e.g., from casual to formal).
 
@@ -149,7 +149,7 @@ print(response.text)
 
 ---
 
-#### Practice 2: Language Translator (`LanguageTranslator.py`)
+#### Practice 2: Language Translator (`LanguageTranslator/LanguageTranslator.py`)
 
 The goal is to build a **Language Translator** — you give it a sentence and a target language, and the model translates it.
 

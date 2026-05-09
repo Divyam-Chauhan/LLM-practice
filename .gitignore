@@ -5,3 +5,8 @@ commit-skill.md
 
 # Ignore self to keep repo public-facing clean
 .gitignore
+
+# Ignore any file ending in context.md anywhere in the repo
+*context.md
+*Context.MD
+*Context.md

@@ -96,27 +96,28 @@ client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 - `os.getenv("GEMINI_API_KEY")`: Retrieves the API key value from the environment variables.
 - `genai.Client(...)`: Creates an authenticated client instance. This `client` is the active connection to Google's API — all subsequent requests go through it.
 
-#### **The Generation Function**
+#### **The Study Assistant Function**
 ```python
-def question_generator(text):
-    user_prompt = "Generate questions from the following content:\n" + text
-    response = client.models.generate_content(model="gemini-2.5-flash", contents=user_prompt)
-    return response
+def study_assistant(user_prompt):
+  response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents=user_prompt
+  )
+  return response
 ```
-- `question_generator(text)`: A reusable function that takes any text and generates study questions from it.
-- `user_prompt`: Concatenates a static instruction (`"Generate questions from..."`) with the dynamic user input. This combined string is what the model receives.
-- `client.models.generate_content()`: **This is the core method.** It sends the prompt to the specified model and returns a `GenerateContentResponse` object.
+- `study_assistant(user_prompt)`: A reusable function that accepts any prompt and sends it to Gemini for processing.
+- `client.models.generate_content()`: **The core method.** It sends the prompt to the specified model and returns a `GenerateContentResponse` object.
   - `model="gemini-2.5-flash"`: Identifies which model to use. Flash is optimized for speed.
   - `contents=user_prompt`: The actual text the model will process.
 - `return response`: Returns the full response object (which contains the generated text plus metadata like token usage and safety ratings).
 
 #### **Output Handling**
 ```python
-response = question_generator("Large Language Models(LLMs) are AI systems trained on massive text data...")
-print(response.text)
+output = study_assistant("Explain Generative AI")
+print(output.text)
 ```
-- We call the function with sample study text.
-- `response.text`: The response object contains much more than just the generated words (it includes token counts, safety ratings, etc.). The `.text` attribute extracts only the generated string for display.
+- Call `study_assistant` with any prompt.
+- `output.text`: The response object contains much more than just the generated text (token counts, safety ratings, etc.). The `.text` attribute extracts only the generated string for display.
 
 ---
 
@@ -168,29 +169,6 @@ print(response.text)
 ```
 - The prompt contains both the target language (`"Hindi"`) and the text to translate, embedded in a single string.
 - `response.text`: Extracts the translated output.
-
----
-
-#### Practice 3: Question Generator Assistant (`Practice Questions/Question Generator Assistant/QuestionGenerator.py`)
-
-The goal is to build a **Question Generator Assistant** — you give it content, and the model creates study questions from that text.
-
-```python
-def question_generator(text):
-    user_prompt = "Generate questions from the following content:\n" + text
-    response = client.models.generate_content(model="gemini-2.5-flash", contents=user_prompt)
-    return response
-```
-- `question_generator(text)`: Builds a prompt from the provided text and sends it to the Gemini model.
-- The SDK call is the same as the other exercises. The only difference is the prompt instruction, which asks the model to generate questions.
-
-**Invocation:**
-```python
-response = question_generator("Large Language Models (LLMs) are AI systems trained on massive text data.")
-print(response.text)
-```
-- The prompt includes the instruction and the source text in a single string.
-- `response.text`: Extracts the generated questions from the model response.
 
 ---
 

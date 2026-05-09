@@ -1,0 +1,7 @@
+# Internal Rules and Goals
+instructions.MD
+PRD.MD
+commit-skill.md
+
+# Ignore self to keep repo public-facing clean
+.gitignore

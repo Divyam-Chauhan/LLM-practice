@@ -1,5 +1,7 @@
 # Tool Use & Function Calling in LLMs
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Divyam-Chauhan/LLM-practice/blob/main/Tool%20Use%20%26%20Function%20Calling/Tool%20use%20and%20function%20calling.ipynb)
+
 This project introduces **Tool Use**, also called **Function Calling**. It shows how an LLM can decide when external information is needed, request a function call with structured arguments, and then use the returned data to generate a final answer.
 
 The notebook (`Tool use and function calling.ipynb`) builds a real-time weather assistant using **Groq**, **Llama 3.3**, and the **OpenWeatherMap API**.

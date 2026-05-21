@@ -23,6 +23,7 @@ Before you dive into any of the folders, make sure you have the following ready 
 3. **API Keys**: Since we are talking to AI models hosted on the internet, we need a "key" to unlock access to them. Don't worry, they are free for learning!
    - **Google Gemini API Key**: Used in most of our projects. [Get it here for free.](https://aistudio.google.com/app/apikey)
    - **Groq API Key**: Groq is a super-fast platform for running open-source models like Llama. [Get it here for free.](https://console.groq.com/keys)
+   - **OpenWeatherMap API Key**: Used in the Tool Use & Function Calling project for real-time weather data. [Get it here for free.](https://openweathermap.org/api)
 
 ---
 
@@ -54,6 +55,13 @@ Every folder in this repository is a standalone mini-project tailored to teach a
 * **Format**: Python Script
 * **What it does**: An AI tutor that explains Python programming concepts with code examples, powered by Meta's open-source Llama 3.3 model hosted on Groq.
 * **What you learn**: How to **swap providers** in LangChain — switching from Google Gemini to Groq (Llama 3.3) with a single line change. Demonstrates that `SystemMessage`, `HumanMessage`, `invoke()`, and `.content` work identically across any supported backend.
+
+---
+
+### 6. `Tool Use & Function Calling`
+* **Format**: Google Colab Notebook
+* **What it does**: Builds a real-time weather assistant using Groq, Llama 3.3, and the OpenWeatherMap API.
+* **What you learn**: Why LLMs need tools for current data, how to define a Python function as a callable tool, how JSON tool schemas work, how to handle `tool_calls`, and how to send tool results back to the model for a final response.
 
 ---
 
